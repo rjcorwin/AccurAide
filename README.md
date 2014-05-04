@@ -16,12 +16,27 @@
 
 
 
-
-
-# Installation
+# Installation on QueueAxedaTimer server
 
 ```
 cp settings.default.json settings.json;
 npm install;
 ./install;
+```
+
+# Installation on Device (Raspberry Pi)
+
+The python serial connection has some dependencies.  See the following URLs for instructions.
+
+http://bradsrpi.blogspot.com/2013/01/rfid-with-innovations-id12-rfid-reader.html
+https://learn.adafruit.com/adafruit-nfc-rfid-on-raspberry-pi/freeing-uart-on-the-pi
+
+Don't forget to `sudo apt-get install python-serial` and reboot.
+
+# Run on Device
+
+``
+cd MaintainDeviceStatus;
+./rfid_to_status.py
+node status_to_axeda.js
 ```
