@@ -5,15 +5,9 @@
 ddoc = { _id:'_design/api' }
 
 ddoc.views = {
-  
-  EventsNotQueued: {
-    map: function(doc) {
-    	if(doc.queued == false){ 
-    	  emit(doc._id, true)
-    	}
-    }
-  }
-
+   "timerSetIsFalse": {
+       "map": "function(doc) {\n  if (doc.timerSet==false){\n    emit(doc._id,true);\n}\n}"
+   } 
 };
 
 module.exports = ddoc;

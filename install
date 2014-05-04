@@ -7,13 +7,17 @@ var cmd = ''
 var fs = require('fs')
 var settings = fs.readFileSync(__dirname + '/settings.json')
 
-// Create databases
+
+// Create our own database with the event records + metadata
+cmd += 'curl -XPUT ' + settings.datbase.url + '/aidnet; \n'
+
+// Create Agency databases
 cmd += 'curl -XPUT ' + settings.datbase.url + '/clients; \n'
 cmd += 'curl -XPUT ' + settings.datbase.url + '/events; \n'
 cmd += 'curl -XPUT ' + settings.datbase.url + '/workers; \n'
 
 // Create views
-cmd += 'couchapp push ./CouchViews/events.js ' + settings.database.url + '/events; \n'
+cmd += 'couchapp push ./CouchViews/events.js ' + settings.database.url + '/aidnet; \n'
 
 // Run the commands
 console.log(cmd)

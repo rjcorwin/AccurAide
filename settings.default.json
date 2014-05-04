@@ -2,6 +2,9 @@
   "database": {
     "url": "http://admin:password@127.0.0.1:5984"
   },
+  "agencyDatabases":
+    "url": "http://admin:password@127.0.0.1:5984"
+  },
   "axeda": {
     "url": "http://nucleus.axeda.com",
     "username": "teamh6@axeda.com",
