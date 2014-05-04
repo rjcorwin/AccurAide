@@ -1,0 +1,21 @@
+{
+  "name": "AidNet",
+  "version": "0.0.0",
+  "description": "",
+  "main": "",
+  "dependencies": {
+    "backbone": "1.1.0",
+    "underscore": "1.5.2",
+    "moment": "2.5.1",
+    "nano": "5.7.1",
+    "couchapp": "0.10.0",
+    "request-json": "0.4.6",
+    "request": "2.27.0",
+    "commander": "2.1.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rjsteinert/AidNet.git"
+  }
+}

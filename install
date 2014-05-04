@@ -1,0 +1,20 @@
+#!/usr/bin/env node
+
+var sys = require('sys')
+var exec = require('child_process').exec;
+function puts(error, stdout, stderr) { sys.puts(stdout) }
+var cmd = ''
+var fs = require('fs')
+var settings = fs.readFileSync(__dirname + '/settings.json')
+
+// Create databases
+cmd += 'curl -XPUT ' + settings.datbase.url + '/clients; \n'
+cmd += 'curl -XPUT ' + settings.datbase.url + '/events; \n'
+cmd += 'curl -XPUT ' + settings.datbase.url + '/workers; \n'
+
+// Create views
+cmd += 'couchapp push ./CouchViews/events.js ' + settings.database.url + '/events; \n'
+
+// Run the commands
+console.log(cmd)
+exec(cmd, puts)
